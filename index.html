@@ -3,20 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mynor Rébuli | CFO & Asesor Corporativo Estratégico</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Mynor Rébuli | CFO Internacional & Asesor Corporativo Senior</title>
+    <meta name="description" content="CFO Internacional especializado en estructuración financiera, liquidez estratégica y financiamiento corporativo. 30+ años de experiencia en transacciones de alto impacto.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #1e3a5f;
             --primary-light: #2c5282;
+            --primary-dark: #0f172a;
             --accent: #c9a227;
             --accent-light: #d4af37;
+            --accent-dark: #a0821a;
             --dark: #0f172a;
-            --gray: #64748b;
-            --light-gray: #f1f5f9;
+            --gray-900: #1e293b;
+            --gray-700: #334155;
+            --gray-500: #64748b;
+            --gray-300: #cbd5e1;
+            --gray-100: #f1f5f9;
             --white: #ffffff;
             --gradient: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            --gradient-accent: linear-gradient(135deg, #c9a227 0%, #d4af37 100%);
         }
 
         * {
@@ -31,22 +38,37 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--dark);
+            color: var(--gray-900);
             line-height: 1.6;
             overflow-x: hidden;
+            background-color: var(--white);
         }
 
-        h1, h2, h3, h4 {
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
             font-weight: 600;
+            line-height: 1.2;
+            color: var(--primary-dark);
         }
 
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        h4 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--gray-700);
+            line-height: 1.8;
+        }
+
+        /* Header */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(30, 58, 95, 0.1);
             z-index: 1000;
             transition: all 0.3s ease;
@@ -55,7 +77,7 @@
         nav {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -63,10 +85,13 @@
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .logo span {
@@ -75,23 +100,24 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--dark);
+            color: var(--gray-700);
             font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.3s;
+            font-size: 0.95rem;
+            transition: all 0.3s;
             position: relative;
+            padding: 0.5rem 0;
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
@@ -103,79 +129,42 @@
             width: 100%;
         }
 
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
         .mobile-menu {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--primary);
         }
 
-        .hero {
-            margin-top: 80px;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            background: var(--gradient);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 3.5rem;
-            color: var(--white);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero-text .subtitle {
-            font-size: 1.5rem;
-            color: var(--accent-light);
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-        }
-
-        .hero-text p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
+        /* Buttons */
         .btn {
-            padding: 1rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-primary {
-            background: var(--accent);
-            color: var(--dark);
+            background: var(--gradient-accent);
+            color: var(--primary-dark);
+            box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3);
         }
 
         .btn-primary:hover {
-            background: var(--accent-light);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+            box-shadow: 0 8px 25px rgba(201, 162, 39, 0.4);
         }
 
         .btn-secondary {
@@ -189,36 +178,141 @@
             border-color: var(--white);
         }
 
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 95vh;
+            display: flex;
+            align-items: center;
+            background: var(--gradient);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="80" cy="20" r="40" fill="rgba(255,255,255,0.03)"/><circle cx="90" cy="80" r="30" fill="rgba(255,255,255,0.02)"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(201, 162, 39, 0.2);
+            color: var(--accent-light);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(201, 162, 39, 0.3);
+        }
+
+        .hero h1 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero h1 span {
+            color: var(--accent-light);
+            display: block;
+            font-size: 0.6em;
+            font-weight: 400;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--accent-light);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            max-width: 90%;
+        }
+
         .hero-stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .stat-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
         }
 
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--accent);
             display: block;
+            font-family: 'Playfair Display', serif;
         }
 
         .stat-label {
             color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-top: 0.5rem;
         }
 
+        /* Section Styles */
         section {
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
+        }
+
+        .container {
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -226,29 +320,244 @@
         .section-header {
             text-align: center;
             margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
+            color: var(--primary-dark);
             margin-bottom: 1rem;
         }
 
         .section-header p {
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto;
+            color: var(--gray-500);
+            font-size: 1.2rem;
         }
 
         .divider {
-            width: 60px;
-            height: 3px;
-            background: var(--accent);
-            margin: 1rem auto;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-accent);
+            margin: 1.5rem auto;
+            border-radius: 2px;
         }
 
+        .divider-left {
+            margin: 1.5rem 0;
+        }
+
+        /* Value Proposition */
+        .value-prop {
+            background: var(--gray-100);
+        }
+
+        .value-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .value-text h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .value-text > p {
+            font-size: 1.2rem;
+            color: var(--gray-700);
+            margin-bottom: 2rem;
+        }
+
+        .value-list {
+            list-style: none;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .value-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .value-list i {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .value-list span {
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+
+        .value-image {
+            position: relative;
+        }
+
+        .value-image::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--accent);
+            border-radius: 12px;
+            z-index: 0;
+        }
+
+        .value-image img {
+            width: 100%;
+            border-radius: 12px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(30, 58, 95, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gray-100);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--primary);
+            color: var(--accent);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .service-card p {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Transactions */
+        .transactions {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .transactions .section-header h2 {
+            color: var(--white);
+        }
+
+        .transactions .section-header p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .transactions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .transaction-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .transaction-card:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .transaction-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .transaction-content h4 {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .transaction-content p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+
+        .transaction-amount {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        /* About */
         .about {
-            background: var(--light-gray);
+            background: var(--gray-100);
         }
 
         .about-content {
@@ -283,14 +592,14 @@
         }
 
         .about-text h3 {
-            font-size: 2rem;
             color: var(--primary);
             margin-bottom: 1.5rem;
+            font-size: 2rem;
         }
 
-        .about-text p {
+        .about-text > p {
             margin-bottom: 1.5rem;
-            color: var(--gray);
+            color: var(--gray-700);
             line-height: 1.8;
         }
 
@@ -305,6 +614,10 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .credential-icon {
@@ -317,261 +630,23 @@
             justify-content: center;
             color: var(--accent);
             font-size: 1.2rem;
+            flex-shrink: 0;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 3rem 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(30, 58, 95, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--accent);
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--light-gray);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            color: var(--primary);
-        }
-
-        .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .service-card p {
-            color: var(--gray);
+        .credential-text h4 {
             font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .service-features {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-
-        .service-features li {
-            padding: 0.5rem 0;
-            color: var(--gray);
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .service-features li i {
-            color: var(--accent);
-            font-size: 0.8rem;
-        }
-
-        .experience {
-            background: var(--light-gray);
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background: var(--accent);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-bottom: 3rem;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -3rem;
-            top: 0;
-            width: 16px;
-            height: 16px;
-            background: var(--accent);
-            border-radius: 50%;
-            border: 3px solid var(--white);
-            box-shadow: 0 0 0 3px var(--accent);
-        }
-
-        .timeline-content {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .timeline-title h3 {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 0.3rem;
-        }
-
-        .timeline-title .company {
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .timeline-date {
-            background: var(--light-gray);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: var(--gray);
-            font-weight: 500;
-        }
-
-        .timeline-content ul {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .timeline-content li {
-            padding: 0.5rem 0;
-            color: var(--gray);
-            font-size: 0.95rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .timeline-content li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .education-card, .skills-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .education-card h3, .skills-card h3 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .edu-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--light-gray);
-        }
-
-        .edu-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .edu-degree {
-            font-weight: 600;
             color: var(--dark);
-            margin-bottom: 0.3rem;
-        }
-
-        .edu-school {
-            color: var(--primary);
-            font-size: 0.9rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .edu-detail {
-            color: var(--gray);
-            font-size: 0.85rem;
-        }
-
-        .skill-category {
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-category h4 {
-            font-size: 1rem;
-            color: var(--dark);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.2rem;
             font-family: 'Inter', sans-serif;
         }
 
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            background: var(--light-gray);
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
+        .credential-text p {
             font-size: 0.85rem;
-            color: var(--primary);
-            border: 1px solid rgba(30, 58, 95, 0.1);
+            color: var(--gray-500);
+            margin: 0;
         }
 
+        /* Contact */
         .contact {
             background: var(--primary);
             color: var(--white);
@@ -582,66 +657,476 @@
             color: var(--white);
         }
 
+        .contact-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+        }
+
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin-top: 3rem;
+            margin: 3rem 0;
         }
 
         .contact-card {
             background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             border-radius: 12px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .contact-icon {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--accent);
             margin-bottom: 1rem;
         }
 
         .contact-card h3 {
-            font-size: 1.2rem;
+            color: var(--white);
+            font-size: 1.3rem;
             margin-bottom: 0.5rem;
+        }
+
+        .contact-card > p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
 
         .contact-card a {
             color: var(--accent);
             text-decoration: none;
             font-weight: 600;
+            font-size: 1.1rem;
         }
 
-        footer {
-            background: var(--dark);
-            color: rgba(255, 255, 255, 0.6);
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-cta {
+            margin-top: 3rem;
+        }
+
+        .contact-cta h3 {
+            color: var(--white);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Industries Section */
+        .industries {
+            background: var(--gray-100);
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .industry-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(30, 58, 95, 0.1);
+            text-align: center;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .industry-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+            color: var(--accent);
+            transition: all 0.3s;
+        }
+
+        .industry-card:hover .industry-icon {
+            background: var(--accent);
+            color: var(--primary);
+            transform: rotateY(360deg);
+        }
+
+        .industry-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .industry-company {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .industry-years {
+            color: var(--gray-500);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .industry-desc {
+            color: var(--gray-700);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Speaking Section */
+        .speaking {
+            background: var(--white);
+        }
+
+        .speaking-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .speaking-card {
+            background: var(--gray-100);
+            border-radius: 12px;
+            padding: 2.5rem;
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .speaking-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .speaking-info h3 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .speaking-org {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .speaking-desc {
+            color: var(--gray-700);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .speaking-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .speaking-link:hover {
+            color: var(--accent);
+        }
+
+        .speaking-cta {
             text-align: center;
             padding: 2rem;
+            background: var(--primary);
+            border-radius: 12px;
+            color: var(--white);
+        }
+
+        .speaking-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 968px) {
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .speaking-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .speaking-icon {
+                margin: 0 auto;
+            }
+        }
+
+        /* CV Section */
+        .cv-section {
+            background: var(--white);
+        }
+
+        .cv-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cv-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .cv-intro p {
+            font-size: 1.2rem;
+            color: var(--gray-700);
+        }
+
+        .cv-highlights {
+            background: var(--gray-100);
+            padding: 3rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+
+        .cv-highlights h3 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .cv-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .cv-stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .cv-stat i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .cv-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .cv-label {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+        }
+
+        .cv-timeline-preview {
+            margin-bottom: 3rem;
+        }
+
+        .cv-timeline-preview h3 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .cv-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .cv-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: var(--accent);
+        }
+
+        .cv-item {
+            position: relative;
+            padding-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .cv-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 2px solid var(--white);
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+
+        .cv-year {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .cv-role {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .cv-company {
+            font-size: 0.95rem;
+            color: var(--gray-500);
+        }
+
+        .cv-download {
+            background: var(--primary);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .cv-download h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .cv-download p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cv-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .cv-note {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+
+        @media (max-width: 968px) {
+            .cv-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cv-highlights {
+                padding: 2rem 1.5rem;
+            }
+
+            .cv-download {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
             font-size: 0.9rem;
         }
 
+        /* Responsive */
         @media (max-width: 968px) {
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
 
-            .hero-text h1 {
-                font-size: 2.5rem;
+            .hero-description {
+                max-width: 100%;
             }
 
-            .about-content {
+            .btn-group {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .value-content {
                 grid-template-columns: 1fr;
+            }
+
+            .value-image {
+                order: -1;
+                max-width: 500px;
+                margin: 0 auto;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
             }
 
-            .skills-grid {
+            .transactions-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                max-width: 400px;
+                margin: 0 auto;
             }
 
             .contact-grid {
@@ -656,17 +1141,39 @@
                 display: block;
             }
         }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
     </style>
+<base target="_blank">
 </head>
 <body>
+    <!-- Header -->
     <header id="header">
         <nav>
             <a href="#" class="logo">Mynor <span>Rébuli</span></a>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#perfil">Perfil</a></li>
+                <li><a href="#propuesta">Propuesta</a></li>
                 <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#industrias">Industrias</a></li>
+                <li><a href="#transacciones">Transacciones</a></li>
+                <li><a href="#conferencias">Conferencias</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#cv">CV</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
             <div class="mobile-menu">
@@ -675,333 +1182,599 @@
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Mynor Estuardo Rébuli López</h1>
-                <p class="subtitle">CFO & Asesor Corporativo Estratégico</p>
-                <p>Ejecutivo senior con trayectoria internacional liderando áreas financieras, operativas y estratégicas en entornos corporativos y de alto crecimiento.</p>
-                <div class="cta-buttons">
+                <div class="hero-badge">
+                    <i class="fas fa-globe-americas"></i>
+                    CFO Internacional & Asesor Corporativo Senior
+                </div>
+                <h1>
+                    Estructuración financiera, liquidez estratégica y financiamiento corporativo en LATAM
+                </h1>
+                <p class="hero-description">
+                    <strong>35+ años de trayectoria:</strong> desde asistente de tesorería hasta CFO internacional. <strong>Liderazgo bilingüe (español/inglés)</strong> en Centroamérica y Caribe, con alcance a México y coordinación de equipos multiculturales en Brasil, Sídney y Suiza. 25+ años formando equipos de alto desempeño, implementando proyectos financieros integrales y transformando áreas con estándares globales.
+                </p>
+                <div class="btn-group">
                     <a href="#contacto" class="btn btn-primary">
                         <i class="fas fa-calendar-check"></i>
-                        Agendar Consulta
-                    </a>
-                    <a href="#experiencia" class="btn btn-secondary">
-                        <i class="fas fa-briefcase"></i>
-                        Ver Trayectoria
+                        Agenda una reunión ejecutiva de diagnóstico
                     </a>
                 </div>
             </div>
             <div class="hero-stats">
                 <div class="stat-card">
-                    <span class="stat-number">30+</span>
-                    <span class="stat-label">Años de Experiencia</span>
+                    <span class="stat-number">35+</span>
+                    <span class="stat-label">Años de Trayectoria Profesional</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">$1.5B</span>
-                    <span class="stat-label">Presupuesto Gestionado</span>
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label">Años Liderando Equipos Globales</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">10+</span>
-                    <span class="stat-label">Países de Alcance</span>
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Regiones: CA, Caribe, México + Global</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">300%</span>
-                    <span class="stat-label">Crecimiento Generado</span>
+                    <span class="stat-number">$800M</span>
+                    <span class="stat-label">Transacciones Estructuradas</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="about" id="perfil">
-        <div class="section-header">
-            <h2>Perfil Profesional</h2>
-            <div class="divider"></div>
-            <p>Visión integral del negocio para dirigir organizaciones hacia mayor rentabilidad, eficiencia y sostenibilidad</p>
-        </div>
-
-        <div class="about-content">
-            <div class="about-image">
-                <img src="mynor_perfil_recortada.jpg" alt="Mynor Rébuli">
+    <!-- Value Proposition -->
+    <section class="value-prop" id="propuesta">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ejecución financiera de alto nivel con visión internacional</h2>
+                <div class="divider"></div>
             </div>
-            <div class="about-text">
-                <h3>Estratega Financiero Internacional</h3>
-                <p>He liderado operaciones y personal, optimizado estructuras corporativas y diseñado modelos financieros y operativos que fortalecen la toma de decisiones, la gobernanza y la escalabilidad.</p>
 
-                <p>Aporto expertise en reestructuración, expansión internacional, levantamiento de capital, diseño de KPIs ejecutivos, gestión de tesorería, control de costos, negociación con stakeholders clave y construcción de culturas organizacionales orientadas a resultados.</p>
+            <div class="value-content">
+                <div class="value-text">
+                    <p><strong>Evolución profesional comprobada:</strong> desde asistente de tesorería hasta CFO internacional. <strong>Liderazgo bilingüe (español/inglés)</strong> en Centroamérica y Caribe, con alcance a México y coordinación de equipos multiculturales en Brasil, Sídney y Suiza. 25+ años implementando proyectos financieros completos —desde su concepción hasta la operación— con mejores prácticas globales.</p>
 
-                <div class="credentials">
-                    <div class="credential-item">
-                        <div class="credential-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div>
-                            <h4>Executive MBA</h4>
-                            <p>Universidad Francisco de Vitoria</p>
-                        </div>
-                    </div>
-                    <div class="credential-item">
-                        <div class="credential-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <div>
-                            <h4>MsC Project Management</h4>
-                            <p>Universidad de Ginebra, Suiza</p>
-                        </div>
-                    </div>
+                    <ul class="value-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Estructuración de deuda corporativa</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Financiamiento internacional y multilaterales</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Tesorería estratégica y gestión de liquidez</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>FP&A, modelos financieros y reporting ejecutivo</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Reestructuración financiera y optimización de procesos</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Integración tecnológica (SAP R/3)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Consolidación regional y reporting a casa matriz</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Liderazgo de equipos multiculturales, multietnicos y multidisciplinarios</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Formación de equipos de alto desempeño con estándares internacionales</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="value-image">
+                    <img src="mynor_perfil_recortada.jpg" alt="Mynor Rébuli - CFO Internacional">
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Services -->
     <section class="services" id="servicios">
-        <div class="section-header">
-            <h2>Servicios de Asesoría Corporativa</h2>
-            <div class="divider"></div>
-            <p>Soluciones estratégicas para la transformación financiera y operativa de su organización</p>
-        </div>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3>Reestructuración de Capitales</h3>
-                <p>Optimización de estructuras financieras para mejorar liquidez, reducir costos de financiamiento y maximizar el retorno a accionistas.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Diseño de estrategias de capital de trabajo</li>
-                    <li><i class="fas fa-check"></i> Negociación con banca local e internacional</li>
-                    <li><i class="fas fa-check"></i> Gestión de covenants y riesgos financieros</li>
-                    <li><i class="fas fa-check"></i> Levantamiento de capital y deuda</li>
-                </ul>
+        <div class="container">
+            <div class="section-header">
+                <h2>Servicios Especializados</h2>
+                <div class="divider"></div>
+                <p>Soluciones financieras adaptadas a las necesidades de su organización</p>
             </div>
 
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-calculator"></i>
-                </div>
-                <h3>Metodología ABC</h3>
-                <p>Implementación de Activity-Based Costing para una asignación precisa de costos indirectos y mejor toma de decisiones operativas.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Identificación de cost drivers</li>
-                    <li><i class="fas fa-check"></i> Mapeo de procesos y actividades</li>
-                    <li><i class="fas fa-check"></i> Asignación de costos por actividad</li>
-                    <li><i class="fas fa-check"></i> Análisis de rentabilidad por producto</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-clock"></i>
-                </div>
-                <h3>TDABC (Time-Driven)</h3>
-                <p>Time-Driven Activity-Based Costing para una gestión más ágil y dinámica de costos basada en el tiempo de las actividades.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Estimación de capacidad práctica</li>
-                    <li><i class="fas fa-check"></i> Cálculo de costos por unidad de tiempo</li>
-                    <li><i class="fas fa-check"></i> Modelado de requerimientos temporales</li>
-                    <li><i class="fas fa-check"></i> Optimización continua de procesos</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="experience" id="experiencia">
-        <div class="section-header">
-            <h2>Trayectoria Profesional</h2>
-            <div class="divider"></div>
-            <p>Experiencia en empresas Fortune 500 y liderazgo de transformaciones financieras</p>
-        </div>
-
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <div class="timeline-title">
-                            <h3>Asesor Corporativo</h3>
-                            <span class="company">Start Ups - Consultoría Independiente</span>
-                        </div>
-                        <span class="timeline-date">2025 - Presente</span>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
                     </div>
-                    <ul>
-                        <li>Creación de BPO internacional de 90 CSRs desde concepción hasta puesta en marcha</li>
-                        <li>Intermediación de reorganización accionaria y financiera de negocios familiar</li>
-                        <li>Relación directa con inversionistas y clientes en Canadá y USA</li>
-                    </ul>
+                    <h3>CFO Fractional / Part-Time</h3>
+                    <p>Acceso a experiencia ejecutiva de alto nivel sin el costo de un CFO full-time. Ideal para empresas en crecimiento que necesitan dirección financiera estratégica.</p>
                 </div>
-            </div>
 
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <div class="timeline-title">
-                            <h3>Gerente Financiero</h3>
-                            <span class="company">Umbral Group</span>
-                        </div>
-                        <span class="timeline-date">2022 - 2025</span>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <ul>
-                        <li>Liderazgo de gestión estratégica financiera integral del grupo</li>
-                        <li>Implementación de estrategia de forecasting aumentando precisión en 30%</li>
-                        <li>Reducción de exposición en covenants financieros con banca local e internacional</li>
-                    </ul>
+                    <h3>Reestructuración Financiera y Liquidez</h3>
+                    <p>Optimización de estructuras de capital, renegociación de deuda, gestión de crisis de liquidez y diseño de estrategias de cash flow para sostenibilidad.</p>
                 </div>
-            </div>
 
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <div class="timeline-title">
-                            <h3>Gerente Financiero Corporativo</h3>
-                            <span class="company">Continental Motores S.A.</span>
-                        </div>
-                        <span class="timeline-date">2020 - 2022</span>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
                     </div>
-                    <ul>
-                        <li>Reducción de deuda bancaria antes de lo programado, alcanzando reservas superiores a USD 3M</li>
-                        <li>Optimización de estructura de costos logrando 35% de eficiencia operativa</li>
-                        <li>Crecimiento del 300% en área de seminuevos en 2021 post-pandemia</li>
-                    </ul>
+                    <h3>Modelos Financieros para Inversionistas</h3>
+                    <p>Desarrollo de modelos financieros robustos, proyecciones, análisis de escenarios y due diligence financiero para rondas de inversión o venta de empresa.</p>
                 </div>
-            </div>
 
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <div class="timeline-title">
-                            <h3>Finance Business Partner | CFO Representative CAC</h3>
-                            <span class="company">Bayer</span>
-                        </div>
-                        <span class="timeline-date">2017 - 2019</span>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-university"></i>
                     </div>
-                    <ul>
-                        <li>Planificación financiera regional de Centroamérica y Caribe</li>
-                        <li>Supervisión de cierre de operaciones generando beneficio corporativo anual de USD 100M</li>
-                        <li>Rediseño del modelo logístico para CAC en un solo centro de distribución</li>
-                    </ul>
+                    <h3>Estructuración de Deuda y Financiamiento</h3>
+                    <p>Negociación con bancos comerciales, instituciones multilaterales (IFC, BID), préstamos sindicados y emisión de bonos corporativos.</p>
                 </div>
-            </div>
 
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <div class="timeline-title">
-                            <h3>Contralor Financiero</h3>
-                            <span class="company">Coca-Cola Company (BIG USA)</span>
-                        </div>
-                        <span class="timeline-date">2013 - 2016</span>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tachometer-alt"></i>
                     </div>
-                    <ul>
-                        <li>Estrategia financiera y optimización de costos en plantas de producción</li>
-                        <li>Incremento de rentabilidad en 15% anual</li>
-                        <li>Consolidación de proceso M&A de dos plantas en Guatemala</li>
-                    </ul>
+                    <h3>Implementación de KPIs y Reporting Ejecutivo</h3>
+                    <p>Diseño de dashboards ejecutivos, sistemas de control de gestión, reporting para juntas directivas y comunicación efectiva con stakeholders.</p>
                 </div>
-            </div>
 
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <div class="timeline-title">
-                            <h3>Tesorero Corporativo</h3>
-                            <span class="company">Tigo Guatemala (COMCEL)</span>
-                        </div>
-                        <span class="timeline-date">2006 - 2013</span>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
                     </div>
-                    <ul>
-                        <li>Gestión de presupuesto anual de Cash Flow de $1.5B</li>
-                        <li>Estrategias de financiamiento local e internacional</li>
-                        <li>Eliminación de riesgo de exposición cambiaria en crisis 2008-2009</li>
-                    </ul>
+                    <h3>Transformación Financiera y Procesos</h3>
+                    <p>Implementación de SAP R/3, optimización de procesos contables y financieros, digitalización y automatización de reportes.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="education-skills">
-        <div class="skills-grid">
-            <div class="education-card">
-                <h3><i class="fas fa-university"></i> Educación Superior</h3>
-
-                <div class="edu-item">
-                    <div class="edu-degree">Executive MBA</div>
-                    <div class="edu-school">Universidad Francisco de Vitoria, España</div>
-                    <div class="edu-detail">Major in Finance - Stetson University</div>
-                </div>
-
-                <div class="edu-item">
-                    <div class="edu-degree">MsC Ciencias</div>
-                    <div class="edu-school">Universidad de Ginebra, Suiza</div>
-                    <div class="edu-detail">Major in Project Management</div>
-                </div>
+    <!-- Industries Section -->
+    <section class="industries" id="industrias">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industrias de Especialización</h2>
+                <div class="divider"></div>
+                <p>30+ años de experiencia multinacional en sectores clave de la economía</p>
             </div>
 
-            <div class="skills-card">
-                <h3><i class="fas fa-tools"></i> Competencias</h3>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <h3>Oil & Gas</h3>
+                    <p class="industry-company">Shell Guatemala</p>
+                    <p class="industry-years">1989 - 1994</p>
+                    <p class="industry-desc">Inicio de carrera en Big Oil. Gestión de tesorería y análisis contable en operaciones petroleras.</p>
+                </div>
 
-                <div class="skill-category">
-                    <h4>Certificaciones</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">PMI Certified</span>
-                        <span class="skill-tag">Dirección Financiera (TEC Monterrey)</span>
-                        <span class="skill-tag">Management Development (George Washington U)</span>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3>Farmacéutica</h3>
+                    <p class="industry-company">Novartis, Bayer</p>
+                    <p class="industry-years">1995 - 2005, 2017 - 2019</p>
+                    <p class="industry-desc">Liderazgo financiero regional, implementación SAP, gestión de riesgos y cumplimiento normativo internacional.</p>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-glass-bottle"></i>
+                    </div>
+                    <h3>Consumer Goods</h3>
+                    <p class="industry-company">Coca-Cola, Spectrum Brands</p>
+                    <p class="industry-years">2013 - 2017</p>
+                    <p class="industry-desc">Optimización de costos en manufactura, M&A, implementación de sistemas de distribución clase mundial.</p>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Telecomunicaciones</h3>
+                    <p class="industry-company">Tigo Guatemala</p>
+                    <p class="industry-years">2006 - 2013</p>
+                    <p class="industry-desc">Gestión de $1.5B en cash flow, levantamiento de deuda internacional, M&A de empresas de contenido.</p>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Industrial & Manufactura</h3>
+                    <p class="industry-company">Sika, Continental Motores, Umbral</p>
+                    <p class="industry-years">2020 - Presente</p>
+                    <p class="industry-desc">Eficiencia operativa, reestructuración financiera, gestión de crisis y crecimiento post-pandemia.</p>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Startups & BPO</h3>
+                    <p class="industry-company">Asesoría Independiente</p>
+                    <p class="industry-years">2025 - Presente</p>
+                    <p class="industry-desc">Creación de operaciones internacionales, estructuración de capital, expansión de puntos de venta en CA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaking/Publications Section -->
+    <section class="speaking" id="conferencias">
+        <div class="container">
+            <div class="section-header">
+                <h2>Conferencias & Pensamiento de Liderazgo</h2>
+                <div class="divider"></div>
+                <p>Compartiendo conocimiento con la comunidad financiera y empresarial</p>
+            </div>
+
+            <div class="speaking-content">
+                <div class="speaking-card">
+                    <div class="speaking-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="speaking-info">
+                        <h3>Foro: El CPA Agregando Valor en el Plan de Negocios</h3>
+                        <p class="speaking-org">CLECPA - Colegio de Contadores Públicos</p>
+                        <p class="speaking-desc">Panelista experto compartiendo estrategias financieras para la creación de valor empresarial y planificación de negocios sostenibles.</p>
+                        <a href="https://www.facebook.com/clecpa/posts/foro-el-cpa-agregando-valor-en-el-plan-de-negociospanelistaslicda-ricsima-salaza/1254377854604763/" target="_blank" class="speaking-link">
+                            <i class="fas fa-external-link-alt"></i> Ver publicación del evento
+                        </a>
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <h4>Tecnologías</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">SAP R3 / S4HANA</span>
-                        <span class="skill-tag">Oracle Business Suite</span>
-                        <span class="skill-tag">MS Dynamics</span>
-                        <span class="skill-tag">Excel Avanzado</span>
-                        <span class="skill-tag">IA for Finance</span>
+                <div class="speaking-cta">
+                    <p>¿Interesado en que participe como speaker en su evento?</p>
+                    <a href="mailto:mynor.rebuli@yahoo.com?subject=Invitación%20a%20Conferencia" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i>
+                        Invitar a participar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transactions -->
+    <section class="transactions" id="transacciones">
+        <div class="container">
+            <div class="section-header">
+                <h2>Transacciones Relevantes</h2>
+                <div class="divider"></div>
+                <p>Historial comprobado en operaciones de alto impacto financiero</p>
+            </div>
+
+            <div class="transactions-grid">
+                <div class="transaction-card">
+                    <div class="transaction-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="transaction-content">
+                        <h4>Gestión de liquidez en crisis global</h4>
+                        <p>Administración estratégica durante crisis financiera internacional</p>
+                        <span class="transaction-amount">USD 100M (2009)</span>
+                    </div>
+                </div>
+
+                <div class="transaction-card">
+                    <div class="transaction-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="transaction-content">
+                        <h4>Préstamo sindicado en Guatemala</h4>
+                        <p>Estructuración y negociación con consorcio bancario local</p>
+                        <span class="transaction-amount">Q400M</span>
+                    </div>
+                </div>
+
+                <div class="transaction-card">
+                    <div class="transaction-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="transaction-content">
+                        <h4>Financiamiento internacional</h4>
+                        <p>Operación cross-border con instituciones financieras globales</p>
+                        <span class="transaction-amount">USD 600M</span>
+                    </div>
+                </div>
+
+                <div class="transaction-card">
+                    <div class="transaction-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <div class="transaction-content">
+                        <h4>Offering Memorandum para bonos corporativos</h4>
+                        <p>Emisión de deuda corporativa en mercados de capitales</p>
+                        <span class="transaction-amount">USD 800M</span>
+                    </div>
+                </div>
+
+                <div class="transaction-card">
+                    <div class="transaction-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <div class="transaction-content">
+                        <h4>Relación con IFC y financiamiento multilateral</h4>
+                        <p>Gestión de líneas de crédito con instituciones internacionales</p>
+                        <span class="transaction-amount">IFC - Banco Mundial</span>
+                    </div>
+                </div>
+
+                <div class="transaction-card">
+                    <div class="transaction-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="transaction-content">
+                        <h4>Implementación regional de SAP R/3</h4>
+                        <p>Rollout tecnológico financiero en múltiples países</p>
+                        <span class="transaction-amount">Brasil & Sídney</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- About -->
+    <section class="about" id="sobre-mi">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sobre Mí</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="mynor_perfil_recortada.jpg" alt="Mynor Rébuli">
+                </div>
+                <div class="about-text">
+                    <h3>Mynor Rébuli – CFO Internacional & Asesor Corporativo</h3>
+
+                    <p><strong>Trayectoria de 35+ años:</strong> desde asistente de tesorería en Shell (1989-1994) hasta CFO internacional. Mi carrera evolucionó desde roles operativos en tesorería y contraloría, pasando por posiciones de liderazgo regional en Novartis como Tesorero y Contralor Corporativo, hasta llegar a gerencias financieras y direcciones ejecutivas en empresas Fortune 500.</p>
+
+                <p>Esta progresión me permitió desarrollar una visión integral del negocio que abarca desde la operación diaria hasta la estrategia corporativa de alto nivel. <strong>Liderazgo bilingüe (español/inglés)</strong> en Centroamérica y Caribe, con alcance a México y coordinación de equipos multiculturales en Brasil, Sídney y Suiza. Experiencia liderando equipos multietnicos y multidisciplinarios con estándares internacionales.</p>
+
+                    <p>He liderado equipos multiculturales y multidisciplinarios, integrando talento de diferentes nacionalidades para alcanzar objetivos corporativos ambiciosos. Mi expertise incluye reestructuración financiera, expansión internacional, levantamiento de capital, diseño de KPIs ejecutivos, gestión de tesorería estratégica, control de costos, negociación con stakeholders clave y construcción de culturas organizacionales orientadas a resultados.</p>
+
+                    <p>A lo largo de mi carrera, he estructurado transacciones por más de $1,500 millones, incluyendo financiamiento sindicado, bonos corporativos, líneas de crédito multilaterales con IFC, y gestión de liquidez en crisis globales. He implementado sistemas SAP R/3 en múltiples países, optimizado estructuras de costos generando eficiencias del 35%, y liderado procesos de M&A que han generado valor significativo para accionistas.</p>
+
+                    <div class="credentials">
+                        <div class="credential-item">
+                            <div class="credential-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="credential-text">
+                                <h4>Executive MBA</h4>
+                                <p>Universidad Francisco de Vitoria, España</p>
+                            </div>
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="credential-text">
+                                <h4>MsC Project Management</h4>
+                                <p>Universidad de Ginebra, Suiza</p>
+                            </div>
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="credential-text">
+                                <h4>PMI Certified</h4>
+                                <p>Project Management Institute</p>
+                            </div>
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <div class="credential-text">
+                                <h4>Idiomas</h4>
+                                <p>Español Nativo, Inglés C1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section class="cv-section" id="cv">
+        <div class="container">
+            <div class="section-header">
+                <h2>Currículum Profesional</h2>
+                <div class="divider"></div>
+                <p>Trayectoria completa en finanzas corporativas internacionales</p>
+            </div>
+
+            <div class="cv-content">
+                <div class="cv-intro">
+                    <p>Descargue mi currículum vitae completo con información detallada sobre mi experiencia profesional, formación académica, certificaciones y referencias de proyectos ejecutados.</p>
+                </div>
+
+                <div class="cv-highlights">
+                    <h3>Resumen Ejecutivo del CV</h3>
+                    <div class="cv-stats-grid">
+                        <div class="cv-stat">
+                            <i class="fas fa-briefcase"></i>
+                            <span class="cv-number">35+</span>
+                            <span class="cv-label">Años de Trayectoria</span>
+                        </div>
+                        <div class="cv-stat">
+                            <i class="fas fa-building"></i>
+                            <span class="cv-number">10+</span>
+                            <span class="cv-label">Empresas Fortune 500</span>
+                        </div>
+                        <div class="cv-stat">
+                            <i class="fas fa-globe-americas"></i>
+                            <span class="cv-number">5</span>
+                            <span class="cv-label">Países de Operación</span>
+                        </div>
+                        <div class="cv-stat">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span class="cv-number">2</span>
+                            <span class="cv-label">Másters Internacionales</span>
+                        </div>
+                        <div class="cv-stat">
+                            <i class="fas fa-users"></i>
+                            <span class="cv-number">25+</span>
+                            <span class="cv-label">Años Liderando Equipos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-timeline-preview">
+                    <h3>Experiencia Profesional Destacada</h3>
+                    <div class="cv-timeline">
+                        <div class="cv-item">
+                            <div class="cv-year">2025 - Presente</div>
+                            <div class="cv-role">Asesor Corporativo</div>
+                            <div class="cv-company">Start Ups - Consultoría Independiente</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-year">2022 - 2025</div>
+                            <div class="cv-role">Gerente Financiero</div>
+                            <div class="cv-company">Umbral Group</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-year">2020 - 2022</div>
+                            <div class="cv-role">Gerente Financiero Corporativo</div>
+                            <div class="cv-company">Continental Motores S.A.</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-year">2017 - 2019</div>
+                            <div class="cv-role">Finance Business Partner | CFO Representative CAC</div>
+                            <div class="cv-company">Bayer</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-year">2013 - 2016</div>
+                            <div class="cv-role">Contralor Financiero</div>
+                            <div class="cv-company">Coca-Cola Company (BIG USA)</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-year">2006 - 2013</div>
+                            <div class="cv-role">Tesorero Corporativo</div>
+                            <div class="cv-company">Tigo Guatemala (COMCEL)</div>
+                        </div>
+                        <div class="cv-item cv-milestone">
+                            <div class="cv-year">1995 - 2005</div>
+                            <div class="cv-role">Inicio de Liderazgo: Tesorero Corporativo Regional, Contralor Regional, FP&A Regional</div>
+                            <div class="cv-company">Novartis CAC / Novartis México</div>
+                            <div class="cv-note">Primeros roles de liderazgo ejecutivo y gestión de equipos multiculturales</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-year">1989 - 1994</div>
+                            <div class="cv-role">Inicio de Carrera: Asistente de Tesorería, Analista de Contabilidad</div>
+                            <div class="cv-company">Shell Guatemala</div>
+                            <div class="cv-note">Formación en finanzas corporativas y estándares internacionales</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-download">
+                    <h3>Descargar CV Completo</h3>
+                    <p>Acceda a la versión completa de mi currículum en formato PDF con información detallada de todas las posiciones, responsabilidades y logros.</p>
+                    <div class="cv-buttons">
+                        <a href="CV_Mynor_Rebuli.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-file-pdf"></i>
+                            Descargar CV en PDF
+                        </a>
+                        <a href="mailto:mynor.rebuli@yahoo.com?subject=Solicitud%20de%20CV%20Detallado" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i>
+                            Solicitar por Email
+                        </a>
+                    </div>
+                    <p class="cv-note">* Si el enlace no funciona, por favor contácteme directamente y con gusto envío mi CV.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
     <section class="contact" id="contacto">
-        <div class="section-header">
-            <h2>Contacto Profesional</h2>
-            <div class="divider"></div>
-            <p style="color: rgba(255,255,255,0.8);">Disponible para consultoría estratégica</p>
-        </div>
-
-        <div class="contact-grid">
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <h3>Email</h3>
-                <p><a href="mailto:mynor.rebuli@yahoo.com">mynor.rebuli@yahoo.com</a></p>
+        <div class="container">
+            <div class="section-header">
+                <h2>Contacto Profesional</h2>
+                <div class="divider"></div>
+                <p class="contact-subtitle">Construyamos juntos la siguiente etapa financiera de tu empresa</p>
             </div>
 
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fas fa-phone"></i>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>Escríbeme directamente</p>
+                    <a href="mailto:mynor.rebuli@yahoo.com">mynor.rebuli@yahoo.com</a>
                 </div>
-                <h3>Teléfono</h3>
-                <p><a href="tel:+50259080138">+502 5908 0138</a></p>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Teléfono</h3>
+                    <p>Llámame para consultas urgentes</p>
+                    <a href="tel:+50259080138">+502 5908 0138</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <p>Conecta conmigo profesionalmente</p>
+                    <a href="https://www.linkedin.com/in/mynor-rébuli-cfo" target="_blank">Ver Perfil</a>
+                </div>
             </div>
 
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fab fa-linkedin"></i>
+            <div class="contact-cta">
+                <h3>¿Listo para transformar la gestión financiera de tu empresa?</h3>
+                <div class="btn-group" style="justify-content: center;">
+                    <a href="mailto:mynor.rebuli@yahoo.com?subject=Solicitud%20de%20Reunión%20Ejecutiva" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        Agenda una reunión ejecutiva de diagnóstico
+                    </a>
+                    <a href="mailto:mynor.rebuli@yahoo.com" class="btn btn-secondary">
+                        <i class="fas fa-paper-plane"></i>
+                        Enviar mensaje directo
+                    </a>
+                    <a href="mailto:mynor.rebuli@yahoo.com?subject=Solicitud%20de%20Propuesta%20de%20Servicios" class="btn btn-outline" style="border-color: rgba(255,255,255,0.5); color: white;">
+                        <i class="fas fa-file-alt"></i>
+                        Solicitar propuesta de servicios
+                    </a>
                 </div>
-                <h3>LinkedIn</h3>
-                <p><a href="https://www.linkedin.com/in/mynor-rébuli-cfo" target="_blank">Ver Perfil</a></p>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Mynor Rébuli. CFO & Asesor Corporativo Estratégico</p>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Guatemala City | Especialista en Reestructuración Financiera, ABC y TDABC</p>
+        <p>&copy; 2026 Mynor Rébuli. Todos los derechos reservados.</p>
+        <p>CFO Internacional & Asesor Corporativo | Guatemala City, Guatemala</p>
+        <p>Especialista en Estructuración Financiera, Liquidez Estratégica y Financiamiento Corporativo en LATAM</p>
     </footer>
 
     <script>
+        // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             if (window.scrollY > 100) {
@@ -1011,6 +1784,7 @@
             }
         });
 
+        // Smooth scroll for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
